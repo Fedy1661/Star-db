@@ -25,10 +25,10 @@ class App extends Component {
 
       <div className="row mb2">
         <div className="col-md-6">
-          <ItemList onItemSelected={this.onPersonSelected} />
-        </div>
+            <PersonDetails personId={this.state.selectedPerson} />
+          </div>
         <div className="col-md-6">
-          <PersonDetails personId={this.state.selectedPerson} />
+          <ItemList onItemSelected={this.onPersonSelected} />
         </div>
       </div>
     </div>)
