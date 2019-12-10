@@ -1,0 +1,13 @@
+@media(max-width:575px){
+  .items {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+  .person-details{
+    margin-bottom: 25px;
+  }
+}
+#root {
+  max-width: 1200px;
+  margin: 0 auto;
+}
