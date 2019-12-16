@@ -17,6 +17,7 @@ class App extends Component {
     swapiService: new SwapiService()
   }
   render() {
+    const toHomePage = <Redirect to='/people/1'/>;
     return (
       <ErrorBoundary>
         <SwapiServiceProvider value={this.state.swapiService}>
@@ -26,13 +27,13 @@ class App extends Component {
             <RandomPlanet />
 
             <Switch>
-              <Route path='/' exact render={() => <Redirect to='/people/1' />} />
+              <Route path='/' exact render={() => toHomePage} />
               
               <Route path='/people/:id?' exact component={PeoplePage} />
               <Route path='/planets/:id?' exact component={PlanetPage} />
               <Route path='/starships/:id?' exact component={StarshipsPage} />
 
-              <Route render={() => <h2>Page is not found</h2>} />
+              <Route render={() => toHomePage} />
             </Switch>
           </Router>
         </SwapiServiceProvider>
