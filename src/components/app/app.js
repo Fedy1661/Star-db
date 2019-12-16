@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import Header from '../header';
 import RandomPlanet from '../random-planet';
 
+import './bootstrap.min.css';
 import './app.css';
 import SwapiService from '../../services/swapi-service';
 import DummySwapiService from '../../services/dummy-swapi-service';
@@ -10,7 +11,7 @@ import { SwapiServiceProvider } from '../swapi-service-context';
 import ErrorBoundary from '../error-boundary';
 import { PeoplePage, PlanetPage, StarshipsPage, SecretPage, LoginPage } from '../pages';
 
-import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { StarshipDetails } from '../sw-components';
 
 class App extends Component {
@@ -44,8 +45,8 @@ class App extends Component {
             <RandomPlanet />
 
             <Switch>
-            <Route path='/' exact />
-            <Route path='/people/:id?' exact component={PeoplePage} />
+              <Route path='/' exact />
+              <Route path='/people/:id?' exact component={PeoplePage} />
               <Route path='/planets' exact component={PlanetPage} />
               <Route path='/starships' exact component={StarshipsPage} />
               <Route path='/starships/:id' exact render={({ match }) => {

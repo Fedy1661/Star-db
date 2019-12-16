@@ -31,7 +31,8 @@ export default class ItemDetails extends Component {
        this.props.getData !== prevProps.getData ||
        this.props.getImageUrl !== prevProps.getImageUrl) {
       this.setState({
-        loading: true
+        loading: true,
+        error: false
       })
       this.updateItem();
     }
@@ -48,6 +49,7 @@ export default class ItemDetails extends Component {
   }
   updateItem = () => {
     const { itemId, getData, getImageUrl } = this.props;
+    console.log(itemId)
     getData(itemId)
       .then((item) => {
         this.setState({
@@ -60,6 +62,7 @@ export default class ItemDetails extends Component {
   }
   render() {
     const { item, loading, error, image } = this.state;
+    console.log(item)
     const hasData = !(loading || error);
     const errorMessage = error ? <ErrorIndicator /> : null;
     const spinner = loading ? <Spinner /> : null;
