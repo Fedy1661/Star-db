@@ -5,7 +5,6 @@ import Row from '../row';
 
 const PeoplePage = ({ history, match }) => {
   const { id } = match.params;
-  console.log(id);
   return (
     <Row
       left={<PersonList onItemSelected={(id) => history.push(id)} />}
