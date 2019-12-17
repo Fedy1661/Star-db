@@ -6,12 +6,6 @@
   min-height: 130px;
 }
 
-.person-details .person-image {
-  width: 30%;
-  height: 30%;
-  border-radius: 10px;
-}
-
 .person-details .list-group-item {
   padding: .25rem;
 }

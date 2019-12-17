@@ -4,6 +4,14 @@
 .person-details.card {
   padding-bottom: 0;
 }
+.person-details {
+  padding-bottom: 0;
+}
+.person-details .person-image {
+  width: 40%;
+  height: 40%;
+  border-radius: 10px;
+}
 @media(max-width:575px){
   .items {
     display: flex;
@@ -12,16 +20,21 @@
   .person-details{
     margin-bottom: 25px;
   }
-  .planet-image {
-    width: 70px;
-    height: 70px;
+  .person-details.card {
+    flex-direction: column;
+    text-align: center;
+
+
   }
-  .header .links {
-    margin-left: 5px;
+  .header {
+    justify-content: space-between;
   }
   .header ul li {
     padding-right: 9px;
     padding-left: 9px;
+  }
+  .header .links {
+    margin-left: auto;
   }
   .random-planet {
     flex-direction: column;
@@ -31,11 +44,17 @@
     display: block;
     margin: 0 auto;
     margin-right: auto;
-    margin-bottom: 5px;
+    margin-bottom: 10px;
   }
   .jumbotron {
     padding: 20px 0;
   }
+  .person-details .person-image {
+    width: 70%;
+    height: 70%;
+    margin: 0 auto;
+  }
+  
 }
 
 #root {
