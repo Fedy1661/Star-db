@@ -27,13 +27,13 @@ class App extends Component {
             <RandomPlanet />
 
             <Switch>
-              {/* <Route path='/' exact render={() => toHomePage} /> */}
+              <Route path='/' exact render={() => toHomePage} />
               
               <Route path='/people/:id?' exact component={PeoplePage} />
               <Route path='/planets/:id?' exact component={PlanetPage} />
               <Route path='/starships/:id?' exact component={StarshipsPage} />
 
-              {/* <Route render={() => toHomePage} /> */}
+              <Route render={() => toHomePage} />
             </Switch>
           </Router>
         </SwapiServiceProvider>
