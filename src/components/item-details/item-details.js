@@ -17,41 +17,51 @@ export const Record = ({ item, field, label }) => {
 
 export default class ItemDetails extends Component {
   swapiService = new SwapiService();
+  _isMounted = false
   state = {
     item: {},
     loading: true,
     error: false,
     image: null
   }
+  setStatus = (data) => {
+    if (this._isMounted) {
+      this.setState(data)
+    }
+  }
   componentDidMount() {
+    this._isMounted = true
     this.updateItem()
   }
   componentDidUpdate(prevProps) {
+    this._isMounted = true
     if (this.props.itemId !== prevProps.itemId ||
-       this.props.getData !== prevProps.getData ||
-       this.props.getImageUrl !== prevProps.getImageUrl) {
-      this.setState({
+      this.props.getData !== prevProps.getData ||
+      this.props.getImageUrl !== prevProps.getImageUrl) {
+      this.setStatus({
         loading: true,
         error: false
       })
       this.updateItem();
     }
   }
-
+  componentWillUnmount() {
+    this._isMounted = false
+  }
   onError = (err) => {
-    this.setState({
+    this.setStatus({
       error: true,
       loading: false
     })
   }
   onItemLoaded = (item) => {
-    this.setState({ item, loading: false })
+    this.setStatus({ item, loading: false })
   }
   updateItem = () => {
     const { itemId, getData, getImageUrl } = this.props;
     getData(itemId)
       .then((item) => {
-        this.setState({
+        this.setStatus({
           item,
           loading: false,
           image: getImageUrl(item)
@@ -88,7 +98,7 @@ const ItemView = ({ item, image, children }) => {
         <ul className="list-group list-group-flush">
           {
             React.Children.map(children, (child) => {
-              return React.cloneElement(child, {item});
+              return React.cloneElement(child, { item });
             })
           }
         </ul>

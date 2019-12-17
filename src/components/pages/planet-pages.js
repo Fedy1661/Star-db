@@ -1,9 +1,10 @@
 import React from 'react';
 import { PlanetDetails, PlanetList } from '../sw-components';
 import Row from '../row';
+import { withRouter } from 'react-router-dom';
+
 
 const PlanetPage = ({ history, match }) => {
-  console.log(history);
   const { id } = match.params;
   return (
     <Row
@@ -13,4 +14,4 @@ const PlanetPage = ({ history, match }) => {
   )
 }
 
-export default PlanetPage;
+export default withRouter(PlanetPage);

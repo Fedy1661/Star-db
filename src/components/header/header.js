@@ -2,7 +2,8 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import './header.css';
 
-const Header = ({ history }) => {
+const Header = () => {
+
   return (
     <div className="header d-flex">
       <h3>
@@ -12,10 +13,7 @@ const Header = ({ history }) => {
       </h3>
       <ul className="d-flex">
         <li>
-          <Link to={{
-            pathname:"/people/2",
-            state: { fromDashboard: true }
-            }}>People</Link>
+          <Link to='/people/2'>People</Link>
         </li>
         <li>
           <Link to="/planets/2">Planets</Link>
