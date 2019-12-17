@@ -5,6 +5,7 @@
   min-height: 184px;
   position: relative;
   overflow: hidden;
+  display: flex;
 }
 
 .random-planet .planet-image {
@@ -15,7 +16,7 @@
 }
 
 .random-planet .list-group {
-  margin-top: 1rem;
+  margin-top: 0.5rem;
 }
 
 .random-planet .list-group-item {

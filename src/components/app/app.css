@@ -1,3 +1,9 @@
+.jumbotron {
+  padding: 30px;
+}
+.person-details.card {
+  padding-bottom: 0;
+}
 @media(max-width:575px){
   .items {
     display: flex;
@@ -6,7 +12,32 @@
   .person-details{
     margin-bottom: 25px;
   }
+  .planet-image {
+    width: 70px;
+    height: 70px;
+  }
+  .header .links {
+    margin-left: 5px;
+  }
+  .header ul li {
+    padding-right: 9px;
+    padding-left: 9px;
+  }
+  .random-planet {
+    flex-direction: column;
+    text-align: center;
+  }
+  .random-planet .planet-image {
+    display: block;
+    margin: 0 auto;
+    margin-right: auto;
+    margin-bottom: 5px;
+  }
+  .jumbotron {
+    padding: 20px 0;
+  }
 }
+
 #root {
   max-width: 1200px;
   margin: 0 auto;

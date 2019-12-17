@@ -4,13 +4,13 @@ import './header.css';
 
 const Header = () => {
   return (
-    <div className="header d-flex">
+    <div className="header">
       <h3>
         <Link to='/'>
           StarDB
         </Link>
       </h3>
-      <ul className="d-flex">
+      <ul className="links">
         <li>
           <Link to='/people/1'>People</Link>
         </li>

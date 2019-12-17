@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 const Row = ({ right, left }) => {
   return (
     <div className="items row mb2">
-      <div className="col-md-6">
+      <div className="col-md-6 mt">
         {left}
       </div>
       <div className="col-md-6">
